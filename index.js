@@ -261,6 +261,13 @@ app.get("/caleg", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
+    const giveAccess = req.body.authorization
+    if (!giveAccess == "adminasdipasdipo") {
+        return res.json({
+            status: 400,
+            message: "Invalid Access"
+        })
+    }
     try {
         const response = await axios.get('https://kf.kobotoolbox.org/api/v2/assets/a3xiJCPGKXhs5oy6ocrYXB/data.json');
         res.status(200).json({
@@ -274,6 +281,13 @@ app.post("/", async (req, res) => {
 });
 
 app.post("/caleg", async (req, res) => {
+    const giveAccess = req.body.authorization
+    if (!giveAccess == "adminasdipasdipo") {
+        return res.json({
+            status: 400,
+            message: "Invalid Access"
+        })
+    }
     try {
         const response = await axios.get('https://kf.kobotoolbox.org/api/v2/assets/aT6sTvRwH39CH55VAqBh39/data.json');
         res.status(200).json({
