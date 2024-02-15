@@ -262,7 +262,7 @@ const hitungPersentase = (nilaiDicari, total) => {
 
 app.post("/", async (req, res) => {
     const giveAccess = req.body.authorization
-    if (!giveAccess == "adminasdipasdipo") {
+    if (giveAccess !== "adminasdipasdipo") {
         return res.json({
             status: 400,
             message: "Invalid Access"
@@ -282,7 +282,7 @@ app.post("/", async (req, res) => {
 
 app.post("/caleg", async (req, res) => {
     const giveAccess = req.body.authorization
-    if (!giveAccess == "adminasdipasdipo") {
+    if (giveAccess !== "adminasdipasdipo") {
         return res.json({
             status: 400,
             message: "Invalid Access"
