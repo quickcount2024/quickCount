@@ -44,20 +44,21 @@ app.get("/", async (req, res) => {
             data: [{
                 name: 'Anies Baswedan-Muhaimin Iskandar',
                 persen: `${hitungPersentase(paslon1, total)}%`,
-                total: paslon1
+                // total: paslon1
             },{
                 name: 'Prabowo Subianto-Gibran Rakabuming Raka',
                 persen: `${hitungPersentase(paslon2, total)}%`,
-                total: paslon2
+                // total: paslon2
             },{
                 name: 'Ganjar Pranowo-Mahfud Md',
                 persen: `${hitungPersentase(paslon3, total)}%`,
-                total: paslon3
-            },{
-                name: 'Total Suara',
-                persen: `${hitungPersentase(response.data.results.length, 1400)}%`,
-                total: response.data.results.length
-            }
+                // total: paslon3
+            },
+            // {
+            //     name: 'Total Suara',
+            //     persen: `${hitungPersentase(response.data.results.length, 1400)}%`,
+            //     total: response.data.results.length
+            // }
         ]});
     } catch (error) {
         console.error('Proxy error:', error);
@@ -127,7 +128,7 @@ app.get("/caleg", async (req, res) => {
                 PerinndoRow +
                 PPPRow +
                 UmmatRow;
-
+                
             if(isNaN(TotalTemp) === false){
                 TotalTemp += total_paslon; 
             }
@@ -154,7 +155,7 @@ app.get("/caleg", async (req, res) => {
               } 
 
         })
-
+        console.log(PKBTemp, TotalTemp)
         res.status(200).json({
             status: 200,
             data: [{
